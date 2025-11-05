@@ -1,0 +1,14 @@
+<!-- Placeholder Article Image 1 -->
+<svg width="400" height="250" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="article1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#article1)"/>
+  <circle cx="200" cy="125" r="40" fill="rgba(255,255,255,0.2)"/>
+  <rect x="160" y="160" width="80" height="20" rx="10" fill="rgba(255,255,255,0.3)"/>
+  <text x="200" y="200" text-anchor="middle" font-family="Arial" font-size="14" fill="white">Poetry Article</text>
+  <text x="200" y="220" text-anchor="middle" font-family="Arial" font-size="12" fill="rgba(255,255,255,0.8)">400x250px</text>
+</svg>
