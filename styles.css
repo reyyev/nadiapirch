@@ -1108,17 +1108,17 @@ body {
 
 @media (max-width: 480px) {
     .hero-banner {
-        margin-top: 70px;
+        margin-top: 60px;
     }
     
     .banner-slider {
         height: auto;
-        min-height: 700px;
+        min-height: 800px;
     }
     
     .banner-content {
-        padding: 2rem 1rem;
-        gap: 2rem;
+        padding: 1.5rem 1rem;
+        gap: 1.5rem;
     }
     
     .banner-text h1 {
