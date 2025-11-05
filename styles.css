@@ -1113,19 +1113,23 @@ body {
     
     .banner-slider {
         height: auto;
-        min-height: 500px;
+        min-height: 600px;
     }
     
     .banner-content {
-        padding: 0 1rem;
+        padding: 2rem 1rem;
+        gap: 2rem;
     }
     
     .banner-text h1 {
         font-size: 1.8rem;
+        margin-bottom: 1rem;
     }
     
     .banner-text p {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        line-height: 1.4;
+        margin-bottom: 1.5rem;
     }
     
     .book-card {
