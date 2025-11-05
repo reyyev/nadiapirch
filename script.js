@@ -616,11 +616,78 @@ function initializeAccessibility() {
     });
 }
 
+// ===== BANNER SWIPE FUNCTIONALITY =====
+function initializeBannerSwipe() {
+    const bannerSlider = document.querySelector('.banner-slider');
+    if (!bannerSlider) return;
+    
+    let startX = 0;
+    let startY = 0;
+    let startTime = 0;
+    
+    bannerSlider.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        startTime = Date.now();
+        
+        // Pause auto-slideshow during touch
+        pauseSlideShow();
+    }, { passive: true });
+    
+    bannerSlider.addEventListener('touchend', (e) => {
+        const endX = e.changedTouches[0].clientX;
+        const endY = e.changedTouches[0].clientY;
+        const endTime = Date.now();
+        
+        const deltaX = endX - startX;
+        const deltaY = endY - startY;
+        const deltaTime = endTime - startTime;
+        
+        // Check if it's a valid swipe (fast enough, far enough, more horizontal than vertical)
+        const minSwipeDistance = 50;
+        const maxSwipeTime = 300;
+        const maxVerticalDistance = 100;
+        
+        if (deltaTime < maxSwipeTime && 
+            Math.abs(deltaX) > minSwipeDistance && 
+            Math.abs(deltaY) < maxVerticalDistance &&
+            Math.abs(deltaX) > Math.abs(deltaY)) {
+            
+            if (deltaX > 0) {
+                // Swipe right - go to previous slide
+                prevSlide();
+            } else {
+                // Swipe left - go to next slide
+                nextSlide();
+            }
+        }
+        
+        // Resume auto-slideshow
+        startSlideShow();
+    }, { passive: true });
+    
+    // Prevent scrolling when swiping horizontally on the banner
+    bannerSlider.addEventListener('touchmove', (e) => {
+        const currentX = e.touches[0].clientX;
+        const currentY = e.touches[0].clientY;
+        const deltaX = Math.abs(currentX - startX);
+        const deltaY = Math.abs(currentY - startY);
+        
+        // If horizontal movement is greater than vertical, prevent scrolling
+        if (deltaX > deltaY) {
+            e.preventDefault();
+        }
+    }, { passive: false });
+}
+
 // ===== MOBILE OPTIMIZATIONS =====
 function initializeMobileOptimizations() {
     // Touch-friendly interactions
     if ('ontouchstart' in window) {
         document.body.classList.add('touch-device');
+        
+        // Add swipe functionality to banner slider
+        initializeBannerSwipe();
         
         // Improve touch targets
         const touchTargets = document.querySelectorAll('.lang-btn, .preview-btn, .btn-cart, .filter-tab');
