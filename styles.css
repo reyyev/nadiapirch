@@ -1113,7 +1113,7 @@ body {
     
     .banner-slider {
         height: auto;
-        min-height: 600px;
+        min-height: 700px;
     }
     
     .banner-content {
@@ -1122,14 +1122,15 @@ body {
     }
     
     .banner-text h1 {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
+        font-size: 1.6rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.2;
     }
     
     .banner-text p {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         line-height: 1.4;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.2rem;
     }
     
     .book-card {
