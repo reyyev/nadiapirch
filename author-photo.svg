@@ -1,0 +1,8 @@
+<!-- Placeholder Author Photo -->
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="400" fill="#f0f2f5"/>
+  <circle cx="200" cy="150" r="60" fill="#d1d5db"/>
+  <rect x="160" y="250" width="80" height="100" rx="40" fill="#d1d5db"/>
+  <text x="200" y="320" text-anchor="middle" font-family="Arial" font-size="14" fill="#6b7280">Author Photo</text>
+  <text x="200" y="340" text-anchor="middle" font-family="Arial" font-size="12" fill="#9ca3af">400x400px</text>
+</svg>
